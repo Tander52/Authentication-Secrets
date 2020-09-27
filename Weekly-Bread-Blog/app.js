@@ -40,7 +40,7 @@ app.get("/", function(req, res) {
   Post.find({}, function(err, results) {
     if (err) {
       console.log(err);
-    } 
+    }
     res.render("home", {
       startingContent: homeStartingContent,
       posts: results
@@ -99,13 +99,10 @@ app.get("/posts/:postId", function(req, res) {
 
 });
 
-// let port = process.env.PORT;
-// if (port == null || port == "") {
-//   port = 3000;
-// }
-// app.listen(port, function(){
-//   console.log("Server started successfully");
-// });
-app.listen(4000, function(){
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function(){
   console.log("Server started successfully");
 });
