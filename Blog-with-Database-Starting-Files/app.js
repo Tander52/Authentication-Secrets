@@ -17,12 +17,15 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 
 const app = express();
 
+
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
+
 
 
 const postsSchema = {
@@ -37,8 +40,6 @@ app.get("/", function(req, res) {
   Post.find({}, function(err, results) {
     if (err) {
       console.log(err);
-    } else {
-      console.log("No Error");
     }
     res.render("home", {
       startingContent: homeStartingContent,
