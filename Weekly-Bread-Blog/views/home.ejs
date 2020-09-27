@@ -1,0 +1,25 @@
+
+<%- include("partials/header"); -%>
+<div class="">
+  <h1>Welcome</h1>
+  <p>Welcome to my Weekly Bread Blog! My name is Tanner Anderson, which you probably know as you are on this site. I built this blog with two intents, 1) frankly to practice a new found hobby of software development, but most importantly 2) to play some small role again in the conversion of people I love to the Lord Jesus Christ. <hr>I'm definitely not perfect. But I love to study the gospel, and think this may be a way to share that love and hopefully help the Holy Ghost into the hearts of loved ones. Please reach out with any questions or feedback. I want this to be candid, thoughtful and beneficial to each of you.</p>
+  <hr>
+  <p>Much Love, Tanner</p>
+
+</div>
+
+
+
+  <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.postTitle%></h1>
+    <p>
+    <%=post.postContent.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
